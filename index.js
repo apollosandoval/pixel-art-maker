@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
             return;
         }
         let pixel = event.target;
-        pixel.setAttribute('class', 'pixel ' + currentColor.classList.value);
+        pixel.style.backgroundColor = currentColor.value;
     };
 
     let brushStroke = function(event) {
@@ -17,15 +17,26 @@ document.addEventListener("DOMContentLoaded", function(e) {
         }
         if (event.buttons == 1) {
             let pixel = event.target;
-            pixel.setAttribute('class', 'pixel ' + currentColor.classList.value);
+            pixel.style.backgroundColor = currentColor.value;
         }
+    }
+
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+
+    function rgb2hex(rgb) {
+        rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(,\s*\d+\.*\d+)?\)$/);
+        return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     }
 
     let onPaletteClick = function(event) {
         if (!event.target.classList.contains('color')) {
             return;
         }
-        currentColor.setAttribute('class', event.target.id);
+        let color = getComputedStyle(event.target).backgroundColor;
+        // console.log(rgb2hex(color));
+        currentColor.value = rgb2hex(color);
     }
 
     canvas.addEventListener('mousedown', changeColor);

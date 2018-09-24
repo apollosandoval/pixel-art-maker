@@ -39,41 +39,41 @@
 }
 
 .red {
-    background-color: red;
+    background-color: #ff0000;
 }
 
 .orange {
-    background-color: orange;
+    background-color: #ffa500;
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: #ffff00;
 }
 
 .green {
-    background-color: green;
+    background-color: #008000;
 }
 
 .blue {
-    background-color: blue;
+    background-color: #0000ff;
 }
 
 .purple {
-    background-color: purple;
+    background-color: #800080;
 }
 
 .brown {
-    background-color: brown;
+    background-color: #a52a2a;
 }
 
 .grey {
-    background-color: grey;
+    background-color: #808080;
 }
 
 .black {
-    background-color: black;
+    background-color: #000000;
 }
 
 .white {
-    background-color: white;
+    background-color: #ffffff;
 }
